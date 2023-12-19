@@ -12,6 +12,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        headline: 'var(--headline)',
         text: 'var(--text)',
         background: 'var(--background)',
         primary: 'var(--primary)',

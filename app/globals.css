@@ -4,24 +4,26 @@
 
 @layer base {
   :root {
-    --text: #191a1a;
-    --background: #eef0f2;
-    --primary: #323f4e;
-    --secondary: #88a3c3;
-    --accent: #4371a3;
+    --headline: #33272a;
+    --text: #594a4e;
+    --background: #faeee7;
+    --primary: #ff8ba7;
+    --secondary: #340fa3;
+    --accent: #0d0f12;
   }
   .dark {
-    --text: #e5e6e6;
-    --background: #0d0f11;
-    --primary: #b1becd;
-    --secondary: #3c5677;
-    --accent: #5c8bbc;
+    --headline: #fffffe;
+    --text: #eff0ef;
+    --background: #0c0d0c;
+    --primary: #ff8ba7;
+    --secondary: #2e2f2d;
+    --accent: #959197;
   }
 }
 
 @layer components {
   h1 {
-    @apply text-3xl  font-bold md:text-4xl lg:text-6xl md:leading-relaxed;
+    @apply text-3xl font-bold md:text-4xl lg:text-5xl;
   }
 
   h2 {
@@ -45,8 +47,19 @@
   }
 
   p {
-    @apply leading-relaxed text-base md:leading-relaxed lg:text-lg lg:leading-loose;
+    @apply leading-relaxed text-text text-base lg:text-lg lg:leading-loose;
   }
+}
+
+html {
+  font-family: var(--font-mulish);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-philospher);
 }
 
 section {
@@ -64,30 +77,6 @@ blockquote::before {
 
 blockquote::after {
   content: close-quote;
-}
-
-a[data-tool-tip] {
-  position: relative;
-}
-
-a[data-tool-tip]::after {
-  content: attr(data-tool-tip);
-  display: block;
-  position: absolute;
-  background-color: var(--primary);
-  padding: 1em 3em;
-  color: var(--background);
-  border-radius: 5px;
-  font-size: 0.6em;
-  white-space: nowrap;
-  bottom: 100%;
-  left: 0;
-  transform: scale(0);
-  transition: transform ease-in 120ms;
-}
-
-a[data-tool-tip]:hover::after {
-  transform: scale(1);
 }
 
 .heading::after {
